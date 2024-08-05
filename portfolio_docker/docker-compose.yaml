@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  portfolio-web:
+    build: ./ubuntu
+    image: systemd-ubuntu:22.04  # 使用するUbuntuイメージを指定
+    container_name: portfolio-web
+    hostname : portfolio-web
+    privileged: true
+    # command: tail -f /dev/null  # コンテナを終了させないためのコマンド
+    volumes:
+      - ~/portfolio_web:/work/portfolio_web  # ホストとコンテナ間でデータを共有する場合
+    # tty: true
+    command: /sbin/init
+
+  portfolio-db:
+    image: mysql:latest  # 使用するMySQLイメージを指定
+    container_name: portfolio-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # MySQLのルートパスワードを設定
+    ports:
+      - "3308:3308"  # ホストとコンテナのポートをマッピング
+    volumes:
+      - ./mysql_data:/var/lib/mysql  # データ永続化のためにMySQLデータをホストに保存
+    restart: always
+
+networks:
+  default:
+    name: portfolio
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
