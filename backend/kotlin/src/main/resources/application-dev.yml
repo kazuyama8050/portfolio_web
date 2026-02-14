@@ -1,0 +1,7 @@
+app-conf:
+  canslim_work_dir: /home/kyamasaki/canslim/work
+  canslim_script_dir: /home/kyamasaki/canslim/bin
+  canslim_symbol_filename: symbol_data_{}.csv
+  canslim_stock_filename: termly_stock_data_{}.csv
+  canslim_pl_filename: pl_data_{}.csv
+  canslim_batch_script_filename: can_slim_info.py

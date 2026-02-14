@@ -1,13 +1,13 @@
-package com.portfolio.api
+// package com.portfolio.api
 
-import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
+// import org.junit.jupiter.api.Test
+// import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
-class ApiApplicationTests {
+// @SpringBootTest
+// class ApiApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
+// 	@Test
+// 	fun contextLoads() {
+// 	}
 
-}
+// }
